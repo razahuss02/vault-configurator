@@ -67,7 +67,7 @@ func (auth *serviceAccountTokenAuthenticator) Login(client *vaultAPI.Client, log
 		"role": auth.role,
 	}
 
-	loginPath, err := loginPath()
+	loginPath := loginPath()
 	if err != nil {
 		return err
 	}
@@ -103,12 +103,12 @@ func expiryTime(secret *vaultAPI.Secret, logger logr.Logger) (time.Time, error) 
 	return time.Now().Add(time.Duration(secret.Auth.LeaseDuration) * time.Second), nil
 }
 
-func loginPath() (string, error) {
+func loginPath() string {
 	loginPath := os.Getenv("VAULT_LOGIN_PATH")
 	if loginPath == "" {
 		loginPath = "auth/kubernetes/login"
 	}
-	return string(loginPath), nil
+	return loginPath
 }
 
 func bearerToken() (string, error) {

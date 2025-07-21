@@ -66,7 +66,7 @@ func (r *SecretEngineMountReconciler) Reconcile(ctx context.Context, req ctrl.Re
 		return ctrl.Result{}, err
 	}
 
-	var statuses []vaultv1alpha1.MountStatus
+	statuses := make([]vaultv1alpha1.MountStatus, 0, len(mounts))
 
 	for _, m := range sem.Spec.Mounts {
 		mountPath := m.Path
