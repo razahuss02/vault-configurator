@@ -1,0 +1,25 @@
+
+image:
+  repository: apexdriver/vault-configurator
+  tag: latest
+  pullPolicy: Always
+
+replicaCount: 1
+
+env:
+  VAULT_ADDR: "http://vault.default.svc:8200"
+
+serviceAccount:
+  create: true
+  name: ""
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 64Mi
+
+rbac:
+  create: true

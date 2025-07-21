@@ -1,0 +1,41 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: manager-role
+rules:
+- apiGroups:
+  - vault.apexdriver.dev
+  resources:
+  - authmethods
+  - policies
+  - secretenginemounts
+  - vaultsecrets
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - vault.apexdriver.dev
+  resources:
+  - authmethods/finalizers
+  - policies/finalizers
+  - secretenginemounts/finalizers
+  - vaultsecrets/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - vault.apexdriver.dev
+  resources:
+  - authmethods/status
+  - policies/status
+  - secretenginemounts/status
+  - vaultsecrets/status
+  verbs:
+  - get
+  - patch
+  - update
