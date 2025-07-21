@@ -25,7 +25,7 @@
 ## Install
 
 ```sh
-helm repo add vault-configurator https://apexdriver.github.io/charts
+helm repo add vault-configurator https://razahuss02.github.io/charts
 
 helm upgrade --install vault-configurator vault-configurator/vault-configurator
 ```
