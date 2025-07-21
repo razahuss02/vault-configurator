@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  vault-configurator:
+  - apiVersion: v2
+    appVersion: v0.1.0
+    created: "2025-07-21T23:38:41.477918199Z"
+    description: Kubernetes operator to manage Vault
+    digest: eb6b7e145d3a3f379f93612636a1f5172edd9d8d04877a1a27293b86bc5def5d
+    name: vault-configurator
+    type: application
+    urls:
+    - https://github.com/razahuss02/vault-configurator/releases/download/vault-configurator-0.1.0/vault-configurator-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-07-21T23:38:41.477947143Z"
