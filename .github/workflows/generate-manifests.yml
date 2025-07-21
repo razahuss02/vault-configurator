@@ -45,3 +45,4 @@ jobs:
           else
             git commit -m "chore: generate manifests"
             git push
+          fi
