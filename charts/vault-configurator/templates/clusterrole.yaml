@@ -1,0 +1,21 @@
+{{- if .Values.rbac.create }}
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: {{ include "vault-configurator.fullname" . }}
+rules:
+  - apiGroups: [""]
+    resources: ["pods"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: ["vault.apexdriver.dev"]
+    resources: 
+      - policies
+      - policies/status
+      - secretenginemounts
+      - secretenginemounts/status
+      - authmethods
+      - authmethods/status
+      - vaultsecrets
+      - vaultsecrets/status
+    verbs: ["*"]
+{{- end }}

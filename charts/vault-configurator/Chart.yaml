@@ -1,0 +1,6 @@
+apiVersion: v2
+name: vault-configurator
+description: Kubernetes operator to manage Vault
+type: application
+version: 0.1.0
+appVersion: "v0.1.0"

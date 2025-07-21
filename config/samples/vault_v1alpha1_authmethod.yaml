@@ -1,0 +1,25 @@
+apiVersion: vault.apexdriver.dev/v1alpha1
+kind: AuthMethod
+metadata:
+  labels:
+    app.kubernetes.io/name: vault-configurator
+    app.kubernetes.io/managed-by: kustomize
+  name: authmethod-sample
+spec:
+  authMethods:
+    - type: kubernetes
+      path: test
+      roles:
+        - name: vault-configurator
+          serviceaccount: vault-configurator
+          namespaces: 
+            - "*"
+          policies:
+            - vault-configurator
+            - admin
+        - name: debug
+          serviceaccount: debug
+          namespaces:
+            - default
+          policies:
+            - admin

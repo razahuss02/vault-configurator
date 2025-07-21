@@ -1,0 +1,55 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: ClusterServiceVersion
+metadata:
+  annotations:
+    alm-examples: '[]'
+    capabilities: Basic Install
+  name: vault-configurator.v0.0.0
+  namespace: placeholder
+spec:
+  apiservicedefinitions: {}
+  customresourcedefinitions:
+    owned:
+    - description: AuthMethod is the Schema for the authmethods API.
+      displayName: Auth Method
+      kind: AuthMethod
+      name: authmethods.vault.apexdriver.dev
+      version: v1alpha1
+    - description: Policy is the Schema for the policies API.
+      displayName: Policy
+      kind: Policy
+      name: policies.vault.apexdriver.dev
+      version: v1alpha1
+    - description: SecretEngineMount is the Schema for the secretenginemounts API.
+      displayName: Secret Engine Mount
+      kind: SecretEngineMount
+      name: secretenginemounts.vault.apexdriver.dev
+      version: v1alpha1
+  description: Configure SecretEngines, Policies, and AuthMethods declaratively
+  displayName: vault-configurator
+  icon:
+  - base64data: ""
+    mediatype: ""
+  install:
+    spec:
+      deployments: null
+    strategy: ""
+  installModes:
+  - supported: false
+    type: OwnNamespace
+  - supported: false
+    type: SingleNamespace
+  - supported: false
+    type: MultiNamespace
+  - supported: true
+    type: AllNamespaces
+  keywords:
+  - helm
+  - vault
+  links:
+  - name: Vault Configurator
+    url: https://vault-configurator.domain
+  maturity: alpha
+  provider:
+    name: apexdriver
+  version: 0.0.0

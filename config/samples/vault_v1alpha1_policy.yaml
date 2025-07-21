@@ -1,0 +1,25 @@
+apiVersion: vault.apexdriver.dev/v1alpha1
+kind: Policy
+metadata:
+  labels:
+    app.kubernetes.io/name: vault-configurator
+    app.kubernetes.io/managed-by: kustomize
+  name: policy-sample
+spec:
+  policies:
+    admin: |
+      path "*/data/*" {
+        capabilities = ["create", "read", "list", "update", "delete", "sudo"]
+      }
+
+      path "*/metadata/*" {
+        capabilities = ["create", "read", "list", "update", "delete", "sudo"]
+      }
+
+      path "sys/*" {
+        capabilities = ["create", "read", "list", "update", "delete", "sudo"]
+      }
+
+      path "auth/*" {
+        capabilities = ["create", "read", "list", "update", "delete", "sudo"]
+      }

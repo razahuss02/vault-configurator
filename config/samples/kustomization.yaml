@@ -1,0 +1,8 @@
+## Append samples of your project ##
+resources:
+- vault_v1alpha1_policies.yaml
+- vault_v1alpha1_policy.yaml
+- vault_v1alpha1_secretenginemount.yaml
+- vault_v1alpha1_authmethod.yaml
+- vault_v1alpha1_vaultsecret.yaml
+# +kubebuilder:scaffold:manifestskustomizesamples
