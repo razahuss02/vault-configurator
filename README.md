@@ -25,8 +25,9 @@
 ## Install
 
 ```sh
-helm repo add vault-configurator https://razahuss02.github.io/charts
-
+helm repo add vault-configurator https://razahuss02.github.io/vault-configurator
+```
+```sh
 helm upgrade --install vault-configurator vault-configurator/vault-configurator
 ```
 
