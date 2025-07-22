@@ -7,6 +7,11 @@ on:
     paths:
       - 'charts/**'
 
+  workflow_run:
+    workflows: ["Generate Manifests"]
+    types:
+      - completed
+
 jobs:
   release:
     permissions:
