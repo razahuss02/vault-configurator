@@ -25,6 +25,7 @@ import (
 	vaultAPI "github.com/hashicorp/vault/api"
 )
 
+// Interface with interacting with vault server
 type VaultClient interface {
 	PutPolicy(name string, policy string) error
 	ReadSecretV1(mountPath, path string) (bool, error)
